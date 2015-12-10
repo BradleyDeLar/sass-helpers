@@ -27,11 +27,14 @@ $directions: (top, right, bottom, left);
 
 	// loop sizes
 	@each $size, $pixels in $sizes {
+
 		.p-#{$char}-#{$size} {
 			padding-#{$dir}: #{$pixels} !important;
 		}
+
 		.m-#{$char}-#{$size} {
 			margin-#{$dir}: #{$pixels} !important;
 		}
+
 	}
 }
