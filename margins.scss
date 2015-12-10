@@ -1,0 +1,30 @@
+// define sizes
+$sizes: (xxs: 5px, xs: 10px, sm: 15px, md: 20px, lg: 25px, xl: 30px, xxl: 35px);
+
+// define directions
+$directions: (top, right, bottom, left);
+
+// add generic padding/margin
+.p-n {
+	padding: 0px !important;
+}
+.m-n {
+	padding: 0px !important;
+}
+
+// loop directions
+@each $dir in $directions {
+
+	$char: str-slice($dir, 0, 1);
+
+	.p-#{$char}-n {
+		padding-#{$dir}: 0px !important;
+	}
+
+	// loop sizes
+	@each $size, $pixels in $sizes {
+		.p-#{$char}-#{$size} {
+			padding-#{$dir}: #{$pixels} !important;
+		}
+	}
+}
